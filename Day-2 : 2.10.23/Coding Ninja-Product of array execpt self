@@ -1,0 +1,24 @@
+//Given an array of size n ,we have to return prod array such that prod[i] is equal to all elements of array execpt arr[i]
+public class Solution {
+
+    public static int[] getProductArrayExceptSelf(int[] arr) {
+    	//Your code goes here
+        int n=arr.length;
+        int prod[]=new int [n];
+
+        for(int i=0;i<n;i++)
+        {
+              prod[i]=1;
+            for(int j=0;j<n;j++)
+            {
+                if(i==j)
+                continue;
+                else
+                prod[i]*=arr[j];
+            }
+
+        }
+        return prod;
+    }
+
+}
