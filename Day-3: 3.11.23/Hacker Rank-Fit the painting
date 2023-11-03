@@ -1,0 +1,26 @@
+//You have 2 paintings of size a x b and c x d. You want to hang the paintings inside a rectangular board on the wall.
+//The board has dimensions n x m. You are allowed to rotate the paintings but at least one edge of each of the paintings must be parallel to an edge of the board. 
+//The paintings can touch each other and the edges of the board but cannot overlap or go beyond the edge of the board. 
+//Is it possible to place the paintings on the board?
+import java.util.Scanner;
+class Main
+{
+    public static void main(String[]args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        int d=sc.nextInt();
+       int t_area=n*m;
+       int p1=a*b;
+       int p2=c*d;
+       if(t_area>=(p1+p2))
+       System.out.print("Yes");
+       else
+       System.out.print("No");
+        
+    }
+}
