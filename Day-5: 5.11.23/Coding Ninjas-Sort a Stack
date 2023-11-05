@@ -1,0 +1,21 @@
+//Sort the given stack in descending order.
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+
+	public static void sortStack(Stack<Integer> stack) {
+		// Write your code here.
+		Stack<Integer>temp=new Stack<Integer>();
+		while(!stack.empty())
+		{
+			int curele=stack.pop();
+			while(!temp.empty()&&temp.peek()<curele)
+			stack.push(temp.pop());
+
+			temp.push(curele);
+		}
+		while(!temp.empty())
+		stack.push(temp.pop());
+	}
+
+}
