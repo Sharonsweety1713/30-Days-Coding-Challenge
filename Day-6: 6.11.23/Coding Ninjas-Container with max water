@@ -1,0 +1,22 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+	public static int maxAreaContainer(ArrayList<Integer> arr) {
+		int n=arr.size();
+		int i=0,j=n-1;
+		int maxi=0;
+		while(i<j)
+		{
+			int x=arr.get(i);
+			int y=arr.get(j);
+		    int water=Math.min(x,y)*(j-i);
+			maxi=Math.max(maxi,water);
+			if(x<y)
+			 i++;
+			 else
+			 j--;
+		}
+         return maxi;
+	}
+
+}
