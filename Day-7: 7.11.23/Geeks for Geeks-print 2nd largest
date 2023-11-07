@@ -1,0 +1,11 @@
+class Solution {
+    int print2largest(int arr[], int n) {
+        Arrays.sort(arr);
+        int ans[]=new int[n];
+        for(int i=n-1,j=0;i>0&&j<n;i--,j++)
+         ans[j]=arr[i];
+         
+         
+         return ans[1];
+    }
+}
