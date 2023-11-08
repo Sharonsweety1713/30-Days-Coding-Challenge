@@ -1,0 +1,79 @@
+// You are using GCC
+#include<iostream>
+using namespace std;
+
+bool isSafe(int grid[][9],int r,int c,int num)
+{
+   for(int i=0;i<9;i++)
+   {
+       if(grid[r][i]==num)
+       return false;
+   }
+   for(int i=0;i<9;i++)
+   {
+       if(grid[i][c]==num)
+       return false;
+   }
+   int sr=r-(r%3);
+   int sc=c-(c%3);
+   for(int i=0;i<3;i++)
+   {
+       for(int j=0;j<3;j++)
+       {
+           
+          if(grid[i+sr][j+sc]==num)
+          return false;
+       }
+   }
+   
+   return true;
+}
+bool solve(int grid[][9],int r,int c)
+{
+   if(r==8&&c==9)
+   return true;
+   if(c==9)
+   {
+       r++;
+       c=0;
+   }
+   if(grid[r][c]!=0)
+   return solve(grid,r,c+1);
+   for(int i=1;i<=9;i++)
+   {
+       if(isSafe(grid,r,c,i))
+       {
+       grid[r][c]=i;
+       if(solve(grid,r,c+1))
+       return true;
+       }
+       grid[r][c]=0;
+}
+return false;
+}
+
+int main()
+{
+    int grid[9][9];
+    for(int i=0;i<9;i++)
+    {
+        for(int j=0;j<9;j++)
+        {
+            cin>>grid[i][j];
+        }
+    }
+    if(solve(grid,0,0))
+    {
+    for(int i=0;i<9;i++)
+    {
+        for(int j=0;j<9;j++)
+        {
+           cout<<grid[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    }
+    else
+    cout<<"No Solution exists";
+    return 0;
+}
