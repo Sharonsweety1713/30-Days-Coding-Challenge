@@ -1,0 +1,28 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+
+	public static long sumOrProduct(int n, int q) {
+		
+		long prod=0;
+		final int c=1000000007;
+
+		if(q==1)
+		{
+		for(int i=q;i<=n;i++)
+		prod+=i;
+		}
+		else if(q==2)
+		{
+		    prod=1;
+			for(int i=1;i<=n;i++)
+			{
+			prod*=i;
+			prod%=c;
+			}
+
+		}
+			return prod;
+	}
+		
+}
