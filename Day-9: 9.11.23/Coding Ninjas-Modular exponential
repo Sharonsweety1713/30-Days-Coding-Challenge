@@ -1,0 +1,11 @@
+import java.io.*;
+import java.util.* ;
+
+public class Solution {
+    public static int modularExponentiation(int x, int n, int m) {
+        // Write your code here. 
+        double ans=Math.pow(x,n);
+        int Ans=((int)ans%m);
+        return Ans;       
+    }
+}
