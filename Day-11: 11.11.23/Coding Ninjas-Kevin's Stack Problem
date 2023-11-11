@@ -1,0 +1,19 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution 
+{
+    public static String kevinStackProblem(String s)
+    {
+        // Write your code here.
+        Stack<Character>st=new Stack<>();
+       for(char ch:s.toCharArray())
+           st.push(ch);
+
+           StringBuilder sb=new StringBuilder();
+           while(!st.empty())
+           {
+               sb.append(st.pop());
+           }
+           return sb.toString();
+    }
+}
