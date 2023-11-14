@@ -1,0 +1,28 @@
+#include<algorithm>
+int getMedian(vector<vector<int>> &matrix)
+{
+    // Write your code here.
+    int r=matrix.size();
+    int c=matrix[0].size();
+    vector<int>v;
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            v.push_back(matrix[i][j]);
+        }
+    }
+    sort(v.begin(),v.end());
+    int n=v.size();
+    if (n % 2 != 0) {
+        int idx=n/2;
+        return v[idx];
+    }
+    else
+    {
+        int idx1=n/2;
+        int idx2=(n/2)-1;
+        int ans=v[idx1]+v[idx2];
+        return ans;
+    }
+}
