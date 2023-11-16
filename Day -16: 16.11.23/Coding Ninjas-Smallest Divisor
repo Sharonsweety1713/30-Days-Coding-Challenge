@@ -1,0 +1,18 @@
+public class Solution {
+    public static int smallestDivisor(int arr[], int limit) {
+        // Write your coder here
+        int n=arr.length;
+        int mini=999;
+        for(int i=1;i<=10000;i++)
+        {
+            int sum=0;
+            for(int j=0;j<n;j++)
+            {
+            sum+=Math.ceil((double)arr[j]/i);
+             }
+             if(sum<=limit)
+             mini=Math.min(mini,i);
+        }
+        return mini;
+    }
+}
