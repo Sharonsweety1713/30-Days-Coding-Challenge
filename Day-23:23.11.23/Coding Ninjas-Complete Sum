@@ -1,0 +1,16 @@
+import java.util.* ;
+import java.io.*; 
+
+class Solution {
+
+  public static int[] completeSum(int arr[], int n) {
+    // Write your code here.
+    int ans[]=new int[n];
+    ans[0]=arr[0];
+    for(int i=1;i<n;i++)
+    {
+      ans[i]=ans[i-1]+arr[i];
+    }
+    return ans;
+  }
+}
