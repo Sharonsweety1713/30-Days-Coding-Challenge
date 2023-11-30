@@ -1,0 +1,41 @@
+ 
+import java.util.ArrayList;
+public class Solution {
+
+	public static ArrayList<Integer> printMatrix(int[][] mat, int n, int m) {
+		// Write your code here
+		ArrayList<Integer> ans = new ArrayList<>();
+        Boolean up = true;
+        int r = 0, c = 0;
+        while (r < n && c < m) {
+            if (up) {
+                while (r > 0 && c < m - 1) {
+                    ans.add(mat[r][c]);
+                    r--;
+                    c++;
+                }
+                ans.add(mat[r][c]);
+                if (c == m - 1) {
+                    r++;
+                } else {
+                    c++;
+                }
+            } else {
+                while (r < n - 1 && c > 0) {
+                    ans.add(mat[r][c]);
+                    r++;
+                    c--;
+                }
+                ans.add(mat[r][c]);
+                if (r == n - 1) {
+                    c++;
+                } else {
+                    r++;
+                }
+            }
+            up = !up;
+        }
+        return ans;
+	}
+
+}
